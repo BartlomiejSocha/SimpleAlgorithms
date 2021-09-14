@@ -36,4 +36,31 @@ class LinkedList<T> {
         size ++
         return this
     }
+
+    fun nodeAt(index: Int): Node<T>? {
+        //1
+        var currentNode = head
+        var currentIndex = 0
+
+        //2
+        while (currentNode != null && currentIndex < index) {
+            currentNode = currentNode.next
+            currentIndex++
+        }
+
+        return currentNode
+    }
+    fun functions(index: Int): Int {
+        fun max(a: Int, b: Int): Int {
+            var a = 5
+            var b = 3
+            return if(a > b) a else b
+        }
+
+        fun printMax(c: Int, d: Int): Int {
+            val maxValue = max(c, d)
+            return (maxValue)
+        }
+        return printMax(5, 6)
+    }
 }

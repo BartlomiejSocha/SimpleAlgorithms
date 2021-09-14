@@ -23,4 +23,26 @@ fun main() {
 
         println(list)
     }
+
+    "nodeAt" example {
+        val nodeExample = LinkedList<Int>()
+        nodeExample.nodeAt(5)
+        println(nodeExample)
+    }
+
+    "kotlin data structures" example {
+        for(i in 1..3) {
+            println(i)
+        }
+        var x = 10
+        do {
+            x--
+        } while (x > 8)
+    }
+
+    "functions" example {
+        val functionsExample = LinkedList<Int>()
+        functionsExample.functions(5)
+        println(functionsExample)
+    }
 }
