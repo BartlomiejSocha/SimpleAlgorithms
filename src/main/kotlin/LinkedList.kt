@@ -1,7 +1,7 @@
-class LinkedList<T> : Iterable<T>, Collection<T>, MutableIterator<T>, MutableCollection<T> {
+class LinkedList<T> : Iterable<T>, Collection<T>, MutableCollection<T> {
 
-    private var head: Node<T>? = null
-    private var tail: Node<T>? = null
+    var head: Node<T>? = null
+    var tail: Node<T>? = null
     override var size = 0
 
 

@@ -1,11 +1,12 @@
+import javax.swing.text.Element
+
 interface Stack<Element> {
     fun push(element: Element)
     fun pop(): Element?
 }
 
-class Stack<T: Any>() {
-    private val storage = arrayListOf<T>()
-
+class ImplementsStack: Stack<Element> {
+    private val storage = arrayListOf<Element>()
 
     override fun toString() = buildString {
         appendln("----top----")

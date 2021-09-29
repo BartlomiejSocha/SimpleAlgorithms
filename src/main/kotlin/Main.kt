@@ -1,3 +1,5 @@
+import java.util.Stack
+
 fun main() {
     "creating and linking nodes" example {
         val elementaryNode1 = ElementaryNode(value = 1)
@@ -148,5 +150,31 @@ fun main() {
         println(list)
         list.removeAll(listOf(3, 4, 5))
         println(list)
+    }
+
+    "using a stack" example {
+        val stack = Stack<Int>().apply {
+            push(1)
+            push(2)
+            push(3)
+            push(4)
+        }
+        print(stack)
+        val poppedElement = stack.pop()
+        if (poppedElement != null) {
+            println("Popped: $poppedElement")
+        }
+        print(stack)
+    }
+
+    "tree node" example {
+        val hot = TreeNode("Hot")
+        val cold = TreeNode("Cold")
+
+        val beverages = TreeNode("Beverages").run {
+            add(hot)
+            add(cold)
+        }
+        println("$beverages")
     }
 }
