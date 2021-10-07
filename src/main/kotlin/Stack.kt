@@ -3,9 +3,16 @@ import javax.swing.text.Element
 interface Stack<Element> {
     fun push(element: Element)
     fun pop(): Element?
+    fun peek(): Element?
+
+    val count: Int
+        get
+
+    val isEmpty: Boolean
+        get() = count == 0
 }
 
-class ImplementsStack: Stack<Element> {
+abstract class ImplementsStack: Stack<Element> {
     private val storage = arrayListOf<Element>()
 
     override fun toString() = buildString {
@@ -19,9 +26,27 @@ class ImplementsStack: Stack<Element> {
         storage.add(element)
     }
     override fun pop(): Element? {
-        if (storage.size == 0) {
+        if (isEmpty) {
             return null
         }
-        return storage.removeAt(storage.size - 1)
+        return storage.removeAt(count - 1)
     }
+
+    override fun peek(): Element? {
+        return storage.lastOrNull()
+    }
+
+    override val count: Int
+        get() = storage.size
+
+    companion object {
+        fun <Element> create(items: Iterable<Element>): java.util.Stack<Element> {
+            val stack = java.util.Stack<Element>()
+            for (item in items) {
+                stack.push(item)
+            }
+            return stack
+        }
+    }
+
 }
